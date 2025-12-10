@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { PageRoute, SkillCategory } from './types';
@@ -28,6 +28,13 @@ import {
   ExternalLink
 } from 'lucide-react';
 
+// --- Configuration ---
+// TO CHANGE PHOTO:
+// 1. Upload your image file to the project root folder.
+// 2. Name it "profile.jpg".
+// 3. If you use a different name or format (e.g., .png), update the PROFILE_IMAGE_PATH below.
+const PROFILE_IMAGE_PATH = './profile.jpg';
+
 // --- Page Components ---
 
 const ScrollToTop = () => {
@@ -39,17 +46,30 @@ const ScrollToTop = () => {
 };
 
 const HomePage: React.FC = () => {
+  const [imgError, setImgError] = useState(false);
+
+  // If the direct path fails, we try to see if it works via import in a real build environment,
+  // but for this setup, we rely on the path. If it fails, we show a fallback.
+
   return (
     <div className="animate-in fade-in duration-500">
       {/* Hero Section */}
       <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-12 mb-12 flex flex-col md:flex-row items-center gap-8 md:gap-16">
         <div className="shrink-0 relative">
-          <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-blue-50 shadow-xl">
-             <img 
-               src="profile.jpg"
-               alt={CONTACT_INFO.name} 
-               className="w-full h-full object-cover"
-             />
+          <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-blue-50 shadow-xl bg-slate-100 flex items-center justify-center">
+            {!imgError ? (
+              <img 
+                src={PROFILE_IMAGE_PATH}
+                alt={CONTACT_INFO.name} 
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  console.warn("Profile image failed to load. Please check if 'profile.jpg' exists in the root directory.");
+                  setImgError(true);
+                }}
+              />
+            ) : (
+              <User className="w-24 h-24 text-slate-300" />
+            )}
           </div>
           <div className="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-md border border-slate-100">
              <User className="w-6 h-6 text-blue-600" />
