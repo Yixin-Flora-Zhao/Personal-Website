@@ -1,3 +1,5 @@
+import profileImg from './profile.jpg'; //--new add
+
 import React, { useEffect, useState } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -33,7 +35,8 @@ import {
 // 1. Upload your image file to the project root folder.
 // 2. Name it "profile.jpg".
 // 3. If you use a different name or format (e.g., .png), update the PROFILE_IMAGE_PATH below.
-const PROFILE_IMAGE_PATH = './profile.jpg';
+// const PROFILE_IMAGE_PATH = './profile.jpg';
+const PROFILE_IMAGE_PATH = profileImg; 
 
 // --- Page Components ---
 
