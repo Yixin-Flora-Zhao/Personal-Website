@@ -46,7 +46,7 @@ const HomePage: React.FC = () => {
         <div className="shrink-0 relative">
           <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-blue-50 shadow-xl">
              <img 
-               src="https://picsum.photos/400/400" 
+               src="./profile.jpg" 
                alt={CONTACT_INFO.name} 
                className="w-full h-full object-cover"
              />
@@ -104,7 +104,7 @@ const HomePage: React.FC = () => {
              Specialization
            </h3>
            <p className="text-slate-700">
-             Focusing on <strong>Biostatistics</strong>, <strong>Data Analysis</strong>, and <strong>Machine Learning</strong> models for predictive analytics.
+             Focusing on <strong>Data Analysis</strong>, <strong>Data modelling</strong> and <strong>Biostatistics</strong> for predictive analytics.
            </p>
         </div>
       </div>
