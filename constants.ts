@@ -88,14 +88,24 @@ export const RESEARCH_EXPERIENCE: Experience[] = [
     role: "Research Assistant",
     company: "University of Waterloo",
     location: "ON",
-    period: "May 2024 – Present",
+    period: "Jan 2026 – Present",
+    points: [
+     "Developing statistical models for diagnostic test meta-analysis under GLMM frameworks, focusing on threshold-specific sensitivity/specificity estimation and ROC analysis."
+    ]
+  },
+  {
+    id: "res-2",
+    role: "Research Assistant",
+    company: "University of Waterloo",
+    location: "ON",
+    period: "May 2024 – Dec 2025",
     points: [
       "Model impulsive optimal control for mosquito population management (e.g., Wolbachia releases), deriving feasibility/stability conditions and benchmarking against continuous control via numerical solvers.",
       "Implement reproducible simulations (Python, NumPy/SciPy, Matplotlib) with versioned experiment configs."
     ]
   },
   {
-    id: "res-2",
+    id: "res-3",
     role: "Research Assistant",
     company: "University of Waterloo",
     location: "ON",
@@ -110,6 +120,16 @@ export const RESEARCH_EXPERIENCE: Experience[] = [
 export const PROJECTS: Project[] = [
   {
     id: "proj-1",
+    title: "AI Ingredient Detection $\&$ Recipe Recommendation App",
+    techStack: "GenAI, OpenAI API",
+    description: [
+      "Built a multimodal AI mobile app that helps users discover meal ideas based on ingredients available in their refrigerator.",
+      "Built responsive mobile UI workflows and real-time API integrations using GitHub/Codex-based rapid prototyping",
+      "Use image detection to automatically detect the ingredients in the refrigerator and suggest meals accordingly."
+      ]
+  },
+  {
+    id: "proj-2",
     title: "Multi-class Classification on Protein Folding",
     techStack: "Python",
     description: [
@@ -118,7 +138,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "proj-2",
+    id: "proj-3",
     title: "Credit Card Fraud Detection",
     techStack: "Python",
     description: [
